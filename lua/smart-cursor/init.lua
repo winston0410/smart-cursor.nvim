@@ -4,7 +4,7 @@ local function indent_cursor()
 	local current_line = vim.api.nvim_win_get_cursor(0)[1]
 	local indent_number = ts_indent.get_indent(current_line)
 
-	if indent_number == 0 then
+	if indent_number <= 0 then
 		return
 	end
 
